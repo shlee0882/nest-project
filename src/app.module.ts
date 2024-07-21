@@ -1,15 +1,19 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { App1Controller } from './app1.controller';
-import { MemberController } from './member.controller';
-import { ProductController } from './product.controller';
-import { AppService } from './app.service';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ItemsModule } from './items/items.module';
 
 @Module({
   imports: [
-    // MongooseModule.forRoot('your-mongodb-connection-string')
+    ConfigModule.forRoot({ isGlobal: true }), // 환경 변수 모듈 설정
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get<string>('MONGODB_URI'),
+      }),
+      inject: [ConfigService],
+    }),
+    ItemsModule, // Items 모듈 등록
   ],
-  controllers: [AppController, App1Controller, MemberController, ProductController],
-  providers: [AppService],
 })
 export class AppModule {}

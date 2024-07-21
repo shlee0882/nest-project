@@ -13,7 +13,7 @@
     "paths": {
       "*": ["node_modules/*"]
     },
-    "types": ["node", "@types/retry"],
+    "types": ["node", "@types/retry", "jest"],
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,

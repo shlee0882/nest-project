@@ -2,7 +2,7 @@ service: nest-project
 
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs20.x
   region: ap-northeast-2
   stage: dev
 
