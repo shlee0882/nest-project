@@ -1,0 +1,22 @@
+service: nest-project
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-northeast-2
+  stage: dev
+
+functions:
+  api:
+    handler: dist/lambda.handler
+    timeout: 30
+    events:
+      - http:
+          path: /
+          method: any
+      - http:
+          path: /{proxy+}
+          method: any
+
+plugins:
+  - serverless-offline
