@@ -35,4 +35,12 @@ $ sls --version
 $ sls offline
 $ npm install -g @nestjs/cli
 $ npm install @nestjs/mongoose mongoose @nestjs/config
+$ npm install next react react-dom
+
+```
+
+
+```bash
+http://localhost:4000/api
+http://localhost:4000/graphql
 ```
