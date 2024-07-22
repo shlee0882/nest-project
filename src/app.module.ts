@@ -18,7 +18,8 @@ import { PostsModule } from './posts/posts.module';
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: true, // 메모리에서 스키마 파일 생성
+      sortSchema: true, // 스키마를 정렬하여 타입 충돌 방지
     }),
     PostsModule,
     ItemsModule, 
