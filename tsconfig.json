@@ -13,7 +13,11 @@
     "paths": {
       "*": ["node_modules/*"]
     },
-    "types": ["node", "@types/retry", "jest"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ],
+    "types": ["node", "jest"],
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -28,6 +32,6 @@
     "isolatedModules": true,
     "jsx": "react"
   },
-  "include": ["src/**/*.ts", "lambda.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "lambda.ts"],
   "exclude": ["node_modules"]
 }
