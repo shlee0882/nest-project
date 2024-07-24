@@ -35,3 +35,6 @@ $ sls deploy
   - [Swagger UI](https://xplet8w7md.execute-api.ap-northeast-2.amazonaws.com/dev/api)
   - [GraphQL](https://xplet8w7md.execute-api.ap-northeast-2.amazonaws.com/dev/graphql)
 
+### NestJs, NextJs 같이 사용하기
+
+  - [NestJs, NextJs 한 프로젝트에서 같이 사용하기](https://github.com/shlee0882/nest-next-one-project)
